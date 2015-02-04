@@ -49,9 +49,6 @@ RUN apt-get update && apt-get install -y \
       protobuf-c-compiler \
       python-dev
 
-# Temporary packages
-RUN apt-get -y install less vim
-
 WORKDIR /usr/src
 #RUN curl https://collectd.org/files/collectd-${COLLECTD_VERSION}.tar.bz2 | tar xvj
 #WORKDIR /tmp/collectd-$COLLECTD_VERSION
