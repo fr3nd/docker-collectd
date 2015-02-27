@@ -1,7 +1,6 @@
 FROM debian:jessie
 MAINTAINER Carles Amigó, fr3nd@fr3nd.net
 
-ENV COLLECTD_VERSION e6553128adbed931c8ae36036d60e357868a9ec7
 
 RUN apt-get update && apt-get install -y \
       autoconf \
@@ -49,9 +48,9 @@ RUN apt-get update && apt-get install -y \
       protobuf-c-compiler \
       python-dev
 
+ENV COLLECTD_VERSION collectd-5.4.2
+
 WORKDIR /usr/src
-#RUN curl https://collectd.org/files/collectd-${COLLECTD_VERSION}.tar.bz2 | tar xvj
-#WORKDIR /tmp/collectd-$COLLECTD_VERSION
 RUN git clone https://github.com/collectd/collectd.git
 WORKDIR /usr/src/collectd
 RUN git checkout $COLLECTD_VERSION
