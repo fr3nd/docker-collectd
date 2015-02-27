@@ -46,7 +46,11 @@ RUN apt-get update && apt-get install -y \
       linux-libc-dev \
       pkg-config \
       protobuf-c-compiler \
-      python-dev
+      python-dev && \
+      rm -rf /usr/share/doc/* && \
+      rm -rf /usr/share/info/* && \
+      rm -rf /tmp/* && \
+      rm -rf /var/tmp/*
 
 ENV COLLECTD_VERSION collectd-5.4.2
 
