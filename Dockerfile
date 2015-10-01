@@ -52,7 +52,7 @@ RUN apt-get update && apt-get install -y \
       rm -rf /tmp/* && \
       rm -rf /var/tmp/*
 
-ENV COLLECTD_VERSION collectd-5.4.2
+ENV COLLECTD_VERSION collectd-5.5.0
 
 WORKDIR /usr/src
 RUN git clone https://github.com/collectd/collectd.git
