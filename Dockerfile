@@ -14,10 +14,6 @@ RUN echo 'ef97838e249814ad96a2edc0410326efbb4f3d08  collectd-5.5.0.tar.bz2' > /t
     cd collectd-$COLLECTD_VERSION && \
     ./configure && make && make install && cd - \
     rm -rf /usr/src/collectd /usr/src/collectd-$COLLECTD_VERSION* /var/lib/apt/lists/* && \
-    apt-get autoremove -y build-essential 
-
-# todo: remove build-essential
-# or is it something else?
-# just test out in a debian:jessie contianer
+    apt-get autoremove -y build-essential   
 
 ENTRYPOINT ["/entrypoint.sh"]
